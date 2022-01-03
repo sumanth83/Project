@@ -20,7 +20,7 @@
         <!--Latest compiled JavaScript-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-        <title>E-canteen</title>
+        <!--<title>E-canteen</title>-->
       
     </head>
 
@@ -33,27 +33,26 @@
 
       
         <div class="w3-bar w3-blue">
-            <a href="index.html" class="w3-bar-item w3-button">Home</a>
-            <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-right">Contact</a>
-            <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-right">About</a>
-            <a href="foodstatus.html" class="w3-bar-item w3-button w3-hide-small w3-right">Food status</a>
-            <a href="paymentstatus.html" class="w3-bar-item w3-button w3-hide-small w3-right">Payment status</a>
-            <a href="placeorder.html" class="w3-bar-item w3-button w3-hide-small w3-right">Place order</a>
+            <a href="home.php" class="w3-bar-item w3-button">Home</a>
+            <a href="contact.php" class="w3-bar-item w3-button w3-hide-small w3-right">Contact</a>
+            <a href="about.php" class="w3-bar-item w3-button w3-hide-small w3-right">About</a>
+            <a href="foodstatus.php" class="w3-bar-item w3-button w3-hide-small w3-right">Food status</a>
+            <a href="paymentstatus.php" class="w3-bar-item w3-button w3-hide-small w3-right">Payment status</a>
+            <a href="placeorder.php" class="w3-bar-item w3-button w3-hide-small w3-right">Place order</a>
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
           </div>
           
           <div id="demo" class="w3-bar-block w3-blue w3-hide w3-hide-large w3-hide-medium">
       
-            <a href="placeorder.html" class="w3-bar-item w3-button">Place order</a>
-            <a href="paymentstatus.html" class="w3-bar-item w3-button">Payment status</a>
-            <a href="foodstatus.html" class="w3-bar-item w3-button">Food status</a>
-            <a href="about.html" class="w3-bar-item w3-button">About</a>
-            <a href="contact.html" class="w3-bar-item w3-button">Contact</a>
+            <a href="placeorder.php" class="w3-bar-item w3-button">Place order</a>
+            <a href="paymentstatus.php" class="w3-bar-item w3-button">Payment status</a>
+            <a href="foodstatus.php" class="w3-bar-item w3-button">Food status</a>
+            <a href="about.php" class="w3-bar-item w3-button">About</a>
+            <a href="contact.php" class="w3-bar-item w3-button">Contact</a>
 
             </div>
     
 
-          <marquee behavior="" direction="">Welcome</marquee>
 
 
 
