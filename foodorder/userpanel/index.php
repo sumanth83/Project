@@ -3,9 +3,8 @@
     <head>
          <meta charset="UTF-8">
          <link rel="stylesheet" href="style.css">
-         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -73,6 +72,37 @@
                     x.className = x.className.replace(" w3-show", "");
                   }
                 }
+
+
+
+/*//edit this message to say what you want
+    var message = "Sorry: Right click was disabled by developer.";
+
+function clickIE() {
+    if (document.all) {
+        alert(message);
+        return false;
+    }
+}
+function clickNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            alert(message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = clickNS;
+}
+else {
+    document.onmouseup = clickNS;
+    document.oncontextmenu = clickIE;
+}
+
+document.oncontextmenu = new Function("return false")*/
+
                 </script>
 
         

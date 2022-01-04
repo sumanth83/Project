@@ -60,7 +60,7 @@
             </div>
     
 
-          <marquee behavior="" direction="">Welcome</marquee>
+          <marquee behavior="" direction="">Hello admin</marquee>
 
 
 

@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paymentstatus</title>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  
-   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-   <!-- Latest compiled and minified CSS-->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-   <!--jQuery library -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-   <!--Latest compiled JavaScript-->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     
 <?php include 'index.php';?>
+
 <marquee>payment status</marquee>
 
+<div class="w3-container w3-panel">
+<h1>Payment status</h1>
 
 <form action="" method="post">
 
-     <div class="w3-padding-large w3-margin w3-border w3-border-blue w3-round w3-margin-left">
 
-     <label>ReferencePin</label>
+
+<!--<div class="w3-padding-large w3-margin w3-border w3-border-blue w3-round w3-margin-left">-->
+     <div class=" w3-border w3-border-blue w3-round w3-container w3-panel w3-padding-16">
+
+
+     <p class="w3-text-red"><span>  * required field</span></p>
+
+
+     <label>ReferencePin <span class="w3-text-red">*</span></label>
      <input class="w3-input" type="text" name="full_name" placeholder="Enter your pin" style="width:50%" required>
   
      <br>
@@ -45,6 +40,18 @@
 
 
      </div>
+     </form>
+
+</div>
+
+
+
+
+
+
+
+
+
       
 
 </body>
