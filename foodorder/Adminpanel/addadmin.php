@@ -1,4 +1,4 @@
-
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,24 +23,21 @@
 <body>
     
 
-<?php include 'content.php';?>
+<?php
+session_start();
+include 'content.php';
+?>
+
 
 
 <div class="w3-container">
 <h1>Admin</h1>
 
-<?php
- if(isset($_SESSION['add']))//checking whether the session is set or not
-  {
-    echo $_SESSION['add']; 
-    unset($_SESSION['add']);
-  }
 
-?>
 
 
 <!-- contains form-->
-<form action="" method="post">
+<form action="addadmin.php" method="POST">
 
      <div class="w3-padding-large w3-margin w3-border w3-border-blue w3-round w3-margin-left">
 
@@ -59,70 +56,102 @@
     
      <br>
     
-     <input type="submit" name="submit" class="w3-button w3-blue w3-round">
-
+   <div class="w3-center"><input type="submit" name="submit" class="w3-button w3-blue w3-round w3-center"></div>
+      
 
      </div>
       
 </form>
 </div>
 
+
+
+
+
 <?php
 
-//checks whether the submit button is clicked or not
+$server="localhost";
+$username="root";
+$password="";
+$dbname="food_order";
+
+
+$conn=mysqli_connect($server,$username,$password,$dbname);
 if(isset($_POST['submit']))
 {
+  if(!empty($_POST['full_name'])&& !empty($_POST['username']) && !empty($_POST['password']) ){
+    $name=$_POST['full_name'];
+    $username=$_POST['username'];
+    $password=$_POST['password'];
 
-    //1.Get the data from form
-  $full_name=$_POST['full_name'];
-  $username=$_POST['username'];
-  $password=md5($_POST['password']);
+    $query="insert into addadmin(full_name,username,password) values('$name','$username','$password')";
+    $run=mysqli_query($conn,$query) or die(mysqli_error($conn));
+    
+    if($run)
+    {
+      $_SESSION['status']="admin added successfully";
+      header("Location: manage_admin.php");
+     ob_end_flush();
+    }
+    else{
+      echo "not added";
+    }
 
 
-//sql query to save the data into database
-$sql="INSERT INTO tbl_admin SET
+  }
+  else{
+    echo "all fields are required";
+  }
+}
+/*
+//process the value from form and save it in database
 
-full_name='$full_name',
-username='$username',
-password='$password'
+//chwcks whether the submit button is clicked or not
 
+   if(isset($_POST['submit']))
+   {
+
+    // Button clicked
+    //echo "Button clicked";
+    //1. Get the Data fron form
+
+     $full_name = $_POST['full_name'];
+     $username = $_POST['username'];
+     $password = md5($_POST['password']); 
+
+
+    //2. SQL Query to Save the data into database
+
+
+    $sql="INSERT INTO tbl_admin SET     
+    
+    full_name='$full_name'
+    username='$username',
+    password='$password'
 ";
 
-//echo $sql;
+// Execute Query and Save Data in Database
+
+$conn = mysqli_connect('localhost', 'root', '') or die(mysqli_error()); //Database Connection
+$db_select = mysqli_select_db($conn, "food_order") or die(aysqli_error()); //SElecting Database
 
 
-//executing query and save data into database
-$res=mysqli_query($conn, $sql);// or die(mysqli_error());
+  $res = mysqli_query($conn, $sql);
 
-//check whether the data is inserted or not and display msg
-
-
+  //check whether the data is inserted or not
 if($res==true)
 {
-  // echo "data inserted";
-  //creating session variable to display the messages
-
-  $_SESSION['add'] = "Admin updated successfully";
-  //redirect page to manage admin
-  header("location:".SITEURL.'Admin phase/manage_admin.php');
-
+  echo "yes";
 }
 else
 {
-   //echo "not inserted";
-     //creating session variable to display the messages
-
-  $_SESSION['add'] ="Failed to add admin";
-  //redirect page to add admin
-  header("location:".SITEURL.'Admin phase/admin.php');
-//header("Location:addadmin.php");
-
-
-
+  echo "no";
 }
 
-}
+
+   }*/
 ?>
     
 </body>
 </html>
+

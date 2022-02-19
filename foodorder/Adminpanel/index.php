@@ -33,11 +33,11 @@
 
       
         <div class="w3-bar w3-blue">
-            <a href="index.php" class="w3-bar-item w3-button">Home</a>
+            <a href="home.php" class="w3-bar-item w3-button">Home</a>
            <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-right">Logout</a>
            <a href="manage_admin.php" class="w3-bar-item w3-button w3-hide-small w3-right">Manage admin</a>
-           <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-right">Orders</a>
-           <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-right">Menu</a>
+           <a href="orders.php" class="w3-bar-item w3-button w3-hide-small w3-right">Orders</a>
+           <a href="menu.php" class="w3-bar-item w3-button w3-hide-small w3-right">Menu</a>
 
 
             <!--<a href="paymentstatus.html" class="w3-bar-item w3-button w3-hide-small w3-right">Payment status</a>
@@ -49,8 +49,8 @@
       
            <!--<a href="placeorder.html" class="w3-bar-item w3-button">Place order</a>
             <a href="paymentstatus.html" class="w3-bar-item w3-button">Payment status</a>-->
-            <a href="about.html" class="w3-bar-item w3-button">Menu</a>
-            <a href="contact.html" class="w3-bar-item w3-button">Orders</a>
+            <a href="menu.php" class="w3-bar-item w3-button">Menu</a>
+            <a href="orsers.php" class="w3-bar-item w3-button">Orders</a>
             <a href="manage_admin.php" class="w3-bar-item w3-button">Manage Admin</a>
             <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-right">Logout</a>
 
@@ -60,7 +60,6 @@
             </div>
     
 
-          <marquee behavior="" direction="">Hello admin</marquee>
 
 
 
@@ -114,6 +113,35 @@
                          alert("invalid username or  password");
                      }
                 }
+
+              /*  //edit this message to say what you want
+    var message = "Sorry: Right click was disabled by developer.";
+
+function clickIE() {
+    if (document.all) {
+        alert(message);
+        return false;
+    }
+}
+function clickNS(e) {
+    if (document.layers || (document.getElementById && !document.all)) {
+        if (e.which == 2 || e.which == 3) {
+            alert(message);
+            return false;
+        }
+    }
+}
+if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = clickNS;
+}
+else {
+    document.onmouseup = clickNS;
+    document.oncontextmenu = clickIE;
+}
+
+document.oncontextmenu = new Function("return false")*/
+
                 </script>
 
         

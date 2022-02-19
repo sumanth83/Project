@@ -28,7 +28,10 @@
 </head>
 <body>
 
-<?php include 'content.php';?>
+<?php
+session_start();
+include 'index.php';
+?>
 
 
           <div class="w3-container">
@@ -37,28 +40,70 @@
 
             <a class="w3-button w3-border w3-blue" href="addadmin.php">
                 Add admin
+
             </a>
-            <br>
+             
             <?php
-            if(isset($_SESSION['add']))
-            {
-              echo $_SESSION['add'];
-              unset($_SESSION['add']);
-            } 
-            ?>
-            <br>
+                  if(isset($_SESSION['status']))
+                  {
+                    echo $_SESSION['status'];
+                    unset($_SESSION['status']);
+                  }
+
+                ?>
         
 <table class="w3-table w3-striped">
     <tr>
         <th>S.NO</th>
         <th>FULL NAME</th>
         <th>USER NAME</th>
+        <th>PASSWORD</th>
         <th>ACTION</th>
 
     </tr>
 
-    <?php
-      $sql="SELECT * FROM tbl_admin";
+    
+<?php   
+$server="localhost";
+$username="root";
+$password="";
+$dbname="food_order";
+
+$c=1;
+$conn=mysqli_connect($server,$username,$password,$dbname);
+if($conn)
+{
+  echo "";
+}
+else{
+  echo "";
+}
+
+////////////data fetching starts here///////////
+$sel="SELECT * FROM addadmin";
+$query=$conn->query($sel);
+while($row=$query->fetch_assoc())
+{
+  ?>
+  <tr>
+       <td><?php echo $c++?></td>
+       <td><?php echo $row['full_name'];?></td>
+       <td><?php  echo $row['username'];?></td>
+       <td><?php  echo $row['password'];?></td>
+
+       <td>
+          <div class="w3-button w3-blue w3-tiny">Update</div>
+          <div class="w3-button w3-red w3-tiny"> Delete </div>
+       </td>
+
+  </tr>
+
+<?php
+}
+?>
+
+
+    <!-- $sql="SELECT * FROM tbl_admin";
       //execute the query
       $res=mysqli_query($conn,$sql);
  //check whether the query is executed or not
@@ -81,58 +126,10 @@
        $username=$rows['username'];
 
 
-       //displat the values in table
-       ?>
+       //displat the values in table*/-->
+       
 
-<tr>
-        <td>1</td>
-        <td>sai sumanth</td>
-        <td>sumanth83</td>
-        <td>
-           <div class="w3-button w3-blue w3-tiny">Update</div>
-           <div class="w3-button w3-red w3-tiny"> Delete </div>
-        </td>
 
-    </tr>
-
-       <?php
-     }
-   }
-   else
-   {
-     //
-   }
-
- }
-
-    ?>
-
-   <!--
-    <tr>
-        <td>2</td>
-        <td>Goutham </td>
-        <td>Goutham85</td>
-        <td>
-            <div class="w3-button w3-blue w3-tiny">Update</div>
-            <div class="w3-button w3-red w3-tiny"> Delete</div>
-            
-    
-        </td>
-
-    </tr>
-
-    <tr>
-        <td>3</td>
-        <td>sai Teja</td>
-        <td>saiteja81</td>
-        <td>
-            <div class="w3-button w3-blue w3-tiny">Update</div>
-            <div class="w3-button w3-red w3-tiny"> Delete</div>
-        
-        
-        </td>
-
-    </tr>-->
 </table>
 
    </div>

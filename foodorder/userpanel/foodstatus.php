@@ -22,7 +22,7 @@
 
 
      <label>ReferencePin <span class="w3-text-red">*</span></label>
-     <input class="w3-input" type="text" name="full_name" placeholder="Enter your pin" style="width:50%" required>
+     <input class="w3-input" type="text" name="full_name" placeholder="Enter your four digit pin" style="width:50%" required>
   
      <br>
     
@@ -32,7 +32,7 @@
     <br>
     
     
-     <input type="submit" name="submit" class="w3-button w3-blue w3-round">
+    <div class="w3-center"><button type="submit" class="w3-button w3-blue w3-round">Submit</button></div>
 
 
      </div>

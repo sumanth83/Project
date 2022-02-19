@@ -1,5 +1,5 @@
 
-<?php include '../config/configuration.php';  ?>
+
 <!DOCTYPE html>
 <html>
     <head>
